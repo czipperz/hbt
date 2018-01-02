@@ -484,10 +484,6 @@ impl<T: Ord> HeightBalancedTree<T> {
         contains(&self.root, data)
     }
 
-    pub fn merge(&mut self, other: HeightBalancedTree<T>) {
-        merge(&mut self.root, other.root);
-    }
-
     pub fn split_off(&mut self, data: &T) -> HeightBalancedTree<T> {
         HeightBalancedTree { root: split_off(&mut self.root, data) }
     }
